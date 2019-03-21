@@ -1,0 +1,40 @@
+﻿
+@model WoWWeb.Models.Language.LangiageIndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@Model.FrameworkName</h1>
+@{
+    if (Model==null)
+
+    {
+        <h2>You didn't start to learn any Framework yet </h2>
+        <p>Please <a class="text-dark" asp-controller="Language" asp-action="Create" asp-route-id=@Model.FrameworkId>create </a> one</p>
+    }
+    else
+    {
+        <p>
+            <a asp-action="Create" asp-route-Id="@Model.FrameworkId">Create New</a>
+        </p>
+        foreach (var language in Model.LanguageListingModel)
+        {
+            <div class="card bg-dark text-danger text-center">
+                <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--AfBP32ow--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/http://yeisonpx.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-18-at-9.09.51-AM-1024x558.png" class="card-img" alt="...">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">@language.Name</h5>
+                    <p class="card-text">@language.Description</p>
+                    <p class="card-text">
+                        <p><a class="text-dark" href="@language.Documentation">Go to Documentation.</a></p>
+                        <p><a class="text-dark" href="@language.Tutorials">Go to Tutorials.</a></p>
+                        <p class="text-danger">Version : @language.Version</p>
+                        <p><a class="text-dark" asp-controller="Video" asp-action="Index" asp-route-Id="@language.Id">Videos</a></p>
+                        <p><a class="text-dark text-right" asp-controller="Book" asp-action="Index" asp-route-Id="@language.Id">Books</a></p>
+                    </p>
+                </div>
+            </div>
+        }
+    }
+
+}

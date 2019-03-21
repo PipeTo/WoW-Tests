@@ -1,0 +1,61 @@
+﻿@model WoWWeb.Models.Home.WowIndexModel
+@{
+    ViewData["Title"] = "Way Of Work";
+}
+
+<div Id="">
+    
+    <div id="">
+
+        @if (Model != null)
+        {
+            <h2> Why Is you're way</h2>
+            <div class="row">
+                <p><a class="text-dark"  asp-action="Create">Create  </a> new way to work</p>
+            </div>
+            
+            
+            <div class="container">
+                <div class="row">
+
+                    @foreach (var wow in Model.Wows)
+                    {
+                        <div class="card col-md-4">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><a class="btn text-dark" asp-controller="Framework" asp-action="index" asp-route-id=@wow.Id>@wow.Name </a>
+                                    <div class="form-check">
+                                    <input class="form-check-input position-static" type="checkbox" id="@wow.Id" value="@wow.Id" aria-label="hahhah">
+                                </div></h5>
+                                <p class=" collapse card-text">
+                               
+                                    <p id="K_@wow.Id"  class="collapse card-text"> @wow.Description</p>
+                            
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100" style="width: @wow.Progress%">
+
+                                        </div>
+                                        <span class="badge badge-danger badge-pill">@wow.Progress</span>
+                                    </div>
+                                </p>
+                                <a class="btn btn-light text-dark"data-toggle="collapse" data-target="#K_@wow.Id">View More</a>
+                                <div class="text-right"><a class="btn btn-danger" asp-action="Delete" asp-route-id="@wow.Id">Delete </a></div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="row">
+               
+            </div>
+
+
+        }
+        else
+        {
+        <div class="container align-content-center">
+            <h2>In this moment we don't have any way to work</h2>
+            <h4>Please<a asp-controller="Home" asp-action="Create"> Create </a> a new way </h4>
+        </div>
+        }
+    </div>
+</div>

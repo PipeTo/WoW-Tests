@@ -1,0 +1,49 @@
+﻿@using System.ComponentModel.Design
+@model WoWWeb.Models.Framework.FrameworkIndexModel
+@{
+    ViewData["Title"] = "Way Of Work";
+}
+@if (Model != null)
+{
+<div class="">
+    <h2> @Model.WayOfWorkName</h2>
+ 
+
+</div>
+            
+    <div class="container">
+        <div class="row">
+
+            @foreach (var wow in Model.FrameworksIndex)
+            {
+                <div class="card col-md-4">
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><a class="btn text-dark"asp-controller="Language" asp-action="Index" asp-route-Id="@wow.Id" >@wow.Name</a></h5>
+                        <p class=" collapse card-text">
+                               
+                            <p id="k_@wow.Id" class=" collapse card-text"> @wow.Description</p>
+                            
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75%" aria-valuemin="0" aria-valuemax="100" style="width: @wow.Progress%">
+
+                                </div>
+                                <span class="badge badge-danger badge-pill">@wow.Progress</span>
+                            </div>
+                        </p>
+                        <a class="btn btn-light text-dark"data-toggle="collapse" data-target="#k_@wow.Id">View More</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <p class="text-right" > Please <a class="text-dark" asp-controller="Framework" asp-action="Create" asp-route-id="@Model.WayId">create </a> another one</p>
+
+    </div>
+}
+else
+{
+    
+    <h2>You didn't start to learn any Framework yet </h2>
+    <p>Please <a class="text-dark" asp-controller="Framework" asp-action="Create" asp-route-id="@Model.WayId">create </a> another one</p>
+    
+} 

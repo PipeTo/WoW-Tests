@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoW.Data", "WoW.Data\WoW.Data.csproj", "{FF75735D-D89B-4F2F-ADFB-BFCA5117E538}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WoW.Service", "WoW.Service\WoW.Service.csproj", "{E18B588C-B342-4749-92A1-8E5C4A35AA03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WoWWeb", "WoWWeb\WoWWeb.csproj", "{7E21182D-F190-42E6-A932-7DCF35C9F290}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF75735D-D89B-4F2F-ADFB-BFCA5117E538}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF75735D-D89B-4F2F-ADFB-BFCA5117E538}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF75735D-D89B-4F2F-ADFB-BFCA5117E538}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF75735D-D89B-4F2F-ADFB-BFCA5117E538}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E18B588C-B342-4749-92A1-8E5C4A35AA03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E18B588C-B342-4749-92A1-8E5C4A35AA03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E18B588C-B342-4749-92A1-8E5C4A35AA03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E18B588C-B342-4749-92A1-8E5C4A35AA03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E21182D-F190-42E6-A932-7DCF35C9F290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E21182D-F190-42E6-A932-7DCF35C9F290}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E21182D-F190-42E6-A932-7DCF35C9F290}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E21182D-F190-42E6-A932-7DCF35C9F290}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0440E76C-FD0C-43B4-B58E-372C632640C1}
+	EndGlobalSection
+EndGlobal
